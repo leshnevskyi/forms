@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang='en' class='h-full'>
+  <head>
+    <meta charset='UTF-8'/>
+    <link rel='icon' type='image/svg+xml' href='favicon.svg'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <title>Owls Are Great. Period.</title>
+  </head>
+  <body class='h-full flex'>
+    <form 
+      id='owlyForm'
+      class='
+        relative flex items-center m-auto flex-col gap-5 shadow-lg pb-8 pt-20 
+        px-7 rounded-2xl top-8
+      '
+    >
+      <img 
+        class='absolute -top-16 w-32 aspect-square object-cover rounded-full' 
+        src='/public/assets/images/owl.gif' 
+        alt='A cute owl.'
+      >
+      <div class='w-full flex items-center flex-col gap-7'>
+        <label class='w-full flex flex-col items-center'>
+          <span class='mb-4 text-xl font-bold'>
+            How would you call an owl?
+          </span> 
+          <input 
+            class='w-full border-2 border-slate-200 p-3 rounded-xl invalid:border-red-500'
+            type='text' 
+            name='owlName' 
+            placeholder='Olha Volodymyrivna'
+            required
+            pattern='^[A-Z][a-z ,.-]+$'
+            minlength='2'
+          />
+        </label>
+
+        <fieldset class='flex gap-10'>
+          <legend class='mb-3 text-xl font-bold m-auto'>
+            What is your favorite feature of an owl?
+          </legend>
+  
+          <label class='flex items-center gap-3'>
+            <input 
+              type='radio' 
+              name='favoriteFeature' 
+              value='bigWings' 
+              checked
+            />       
+            Big wings
+          </label>
+  
+          <label class='flex items-center gap-3'>
+            <input 
+              type='radio' 
+              name='favoriteFeature' 
+              value='hugeEyes'
+              checked
+            />
+            Huge eyes
+          </label>
+  
+          <label class='flex items-center gap-3'>
+            <input 
+              type='radio' 
+              name='favoriteFeature' 
+              value='funnySound'
+            />
+            Funny sound
+          </label>
+        </fieldset>
+
+        <div class='w-full flex flex-col items-center'>
+          <label 
+            class='mb-4 text-xl font-bold' 
+            for='FavoriteSpeciesSelector'
+          >
+            Choose your favorite owl species
+          </label>
+  
+          <select 
+            id='FavoriteSpeciesSelector'
+            class='
+              w-full border-2 border-slate-200 p-3 rounded-xl
+            '
+            name='favoriteSpecies' 
+          >
+            <option value='barn'>Barn owl</option>
+            <option value='greatHorned'>Great horned owl</option>
+            <option value='snowy'>Snowy owl</option>
+            <option value='barred'>Barred owl</option>
+            <option value='little'>Little owl</option>
+          </select>
+        </div>
+  
+        <div class='w-full flex flex-col items-center'>
+          <label class='mb-4 text-xl font-bold' for='Reasoning'>
+            Tell us why you chose that way
+          </label>
+          <textarea 
+            id='Reasoning'
+            class='
+              w-full h-20 border-2 border-slate-200 p-3 
+              resize-none rounded-xl
+            '
+            name='reasoning' 
+          ></textarea>
+        </div>
+      </div>
+
+      <label class='flex items-center gap-3'>
+        <input name='userIsOwl' type='checkbox' checked>
+        I am not an owl
+      </label>
+
+      <input 
+        type='hidden' 
+        name='userId' 
+        value='38b48758-7c02-41b1-aff5-6542ea393d89'
+      />
+
+      <button 
+        class='
+          w-2/3 py-2 px-5 rounded-full bg-blue-500 hover:bg-blue-600 
+          shadow-transparent shadow-xl hover:shadow-blue-800/20 duration-300 
+          text-white font-bold
+        '
+      >Hoo-hoo</button>
+    </form>
+    <script defer type='module' src='/index.js'></script>
+  </body>
+</html>

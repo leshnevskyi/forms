@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-size: 0.9rem;
+}
+
+select {
+  position: relative;
+  appearance: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('/public/assets/icons/arrow.svg');
+  background-position: top 50% right 0.5rem;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+}
