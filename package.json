@@ -12,5 +12,9 @@
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.23",
     "vite": "^2.8.0"
+  },
+  "dependencies": {
+    "chart.js": "^3.7.1",
+    "title-case": "^3.0.3"
   }
 }
