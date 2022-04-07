@@ -63,6 +63,10 @@ input[type='checkbox']::before {
 	border: 2px solid black;
 }
 
+input[type='radio']::before {
+	border-radius: 100%;
+}
+
 input[type='radio']:checked::before,
 input[type='checkbox']:checked::before {
 	background: black;

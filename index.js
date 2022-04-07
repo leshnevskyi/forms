@@ -9,19 +9,19 @@ Chart.register(...registerables);
 
 function getErrorMessage(element) {
 	const {
-  valueMissing: valueIsMissing,
-  patternMismatch: patternMismatches,
+		valueMissing: valueIsMissing,
+		patternMismatch: patternMismatches,
 	} = element.validity;
 	
 	switch (true) {
-  case valueIsMissing:
-  	return 'The field is required.';
+		case valueIsMissing:
+			return 'The field is required.';
 
-  case patternMismatches:
-  	return 'The provided value does not meet the field format.';
+		case patternMismatches:
+			return 'The provided value does not meet the field format.';
 
-  default:
-  	return '';
+		default:
+			return '';
 	}
 }
 
@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	const formElemenents = [...form.elements];
 
 	formElemenents.forEach(element => {
-  element.addEventListener('input', () => {
-  	element.classList.add('validated');
-  	element.setCustomValidity(getErrorMessage(element));
-  	element.reportValidity();
-  });
+		element.addEventListener('input', () => {
+			element.classList.add('validated');
+			element.setCustomValidity(getErrorMessage(element));
+			element.reportValidity();
+		});
 	});
 
   form.addEventListener('submit', event => {
@@ -48,21 +48,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.remove();
 
-  const timerStopDate = Date.now() + Number(formData.get('gameTime')) * 60 * 1000;
-  const timerRoot = document.querySelector('.timerRoot');
+		const timerStopDate = Date.now() + Number(formData.get('gameTime')) * 60 * 1000;
+		const timerRoot = document.querySelector('.timerRoot');
 
-  const intervalId = setInterval(() => {
-  	const timeLeft = new Date(timerStopDate - Date.now());
+		const intervalId = setInterval(() => {
+			const timeLeft = new Date(timerStopDate - Date.now());
 
-  	if (timeLeft < 0) {
-			clearInterval(intervalId);
-			timerRoot.textContent = `Time's up!`;
+			if (timeLeft < 0) {
+				clearInterval(intervalId);
+				timerRoot.textContent = `Time's up!`;
 
-			return;
-  	}
+				return;
+			}
 
-  	timerRoot.textContent = timeLeft.toISOString().slice(14, 23);
-  }, 30);
+			timerRoot.textContent = timeLeft.toISOString().slice(14, 23);
+		}, 30);
   });
 
 	const chessPieceKinds = ['pawn', 'rook', 'knight', 'bishop', 'queen', 'king'];
